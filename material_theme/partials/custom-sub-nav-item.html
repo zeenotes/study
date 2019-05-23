@@ -1,0 +1,12 @@
+{% if nav_item.children %}
+	{% for nav_item in nav_item.children %}
+		{% if nav_item.title in page.meta.display %}
+			{% if not nav_item.title.startswith("_") %}
+				{% with nav_item_parent=nav_item.title  %}
+					{% include "partials/custom-wiki-page.html" %}
+				{% endwith %}
+			  {# {% include "partials/custom-nav-item.html" %} #}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endif %}

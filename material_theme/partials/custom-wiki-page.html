@@ -1,0 +1,37 @@
+{% set parent = nav_item_parent %}
+{% set grand_father = nav_item_gf %}
+
+{% if nav_item.children %}
+	{% if nav_item.title in page.meta.display %}
+		{% for nav_item_child in nav_item.children %}
+				{% if not nav_item_child.title.startswith("_") %}
+
+					{% set base_url = nav_item_child.url %}
+					 {% set base_url_list = base_url.split('/')%}
+					 {% set root_url = base_url.split('/')[0]%}
+					 {% set page_root_url = base_url_list|reject('equalto', root_url)|join('/') %}
+					 
+
+					{% if nav_item_child.children %}
+					
+						<div class="div-list-items">
+						<h6 id={{ nav_item_child.title }} class="home-list-items-parent"><span class="list-emoji">&#128196;</span> {{ nav_item_child.title }}</h6>
+						</div>
+						{% if nav_item_first_parent %}
+							{% for nav_item_child_item in nav_item_child.children %}
+								<div class="div-list-items">
+								<h6 id={{ nav_item_child_item.title }} class="home-list-items"><a href={{ page_root_url }} ><span class="list-emoji">&#128196;</span> {{ nav_item_child_item.title }}</a></h6>
+								</div>
+							{% endfor %}
+						{% endif %}
+					{% else %}
+						{% if parent == grand_father %}
+							<div class="div-list-items">
+							<h6 id={{ nav_item_child.title }} class="home-list-items"><a href={{ page_root_url }} ><span class="list-emoji">&#128196;</span> {{ nav_item_child.title }}</a></h6>
+							</div>
+						{% endif %}
+					{% endif %}
+				{% endif %}
+		{% endfor %}
+	{% endif %}
+{% endif %}

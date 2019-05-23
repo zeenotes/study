@@ -1,0 +1,73 @@
+site_name: ha2332 
+copyright: 'Copyright &copy; ha2332-2019'
+docs_dir: 'docs'
+
+# custom theme
+theme:
+  name: material
+  custom_dir: 'material_theme'
+  favicon: 'assets/images/favicon.ico'
+  logo: 'assets/images/logo-black-big.png'
+  # shortcuts:
+    # search: 191   # /
+  feature:
+    tabs: true
+  font: 
+    text: "Roboto"
+    code: "Roboto Mono"
+  palette:
+    primary: 'white'
+    accent: 'grey'
+
+# plugins info
+plugins:
+  - search
+  - awesome-pages:
+      filename: .pages
+      collapse_single_pages: true
+  - pdf-export:
+      verbose: false
+      media_type: print
+      enabled_if_env: ENABLE_PDF_EXPORT
+extra_css:
+  - 'assets/css/extra.css'
+  - 'assets/css/mermaid.css'
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - 'assets/javascript/jquery-min.js'
+  - 'assets/javascript/mermaid.min.js'
+  - 'assets/javascript/raphael.min.js'
+  - 'assets/javascript/flowchart.min.js'
+  - 'assets/javascript/jquery-plugin.js'
+  - 'assets/javascript/extra.js'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - footnotes
+  - meta
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  # - pymdownx.highlight:
+      # use_pygments: True
+      # css_class: highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      clickable_checkbox: False
+      custom_checkbox: True
+  - pymdownx.tilde
+  - toc:
+      permalink: ""
+      separator: "_"
