@@ -1,9 +1,0 @@
-{% set class = "md-nav__item" %}
-{% if nav_item.children %}
-	{% for nav_item in nav_item.children %}
-		{% if not nav_item.title.startswith("_") %}
-		  {% include "partials/qmg-projects.html" %}
-		  {% include "partials/custom-nav-item.html" %}
-		{% endif %}
-	{% endfor %}
-{% endif %}

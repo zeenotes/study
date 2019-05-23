@@ -1,0 +1,949 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Bash Scripting</title>
+      
+    
+	
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="grey">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#a_simple_bash_script" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="ha2332" class="md-header-nav__button md-logo">
+          
+            <img src="../../assets/images/logo-black-big.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              ha2332
+            </span>
+            <span class="md-header-nav__topic">
+              Bash Scripting
+            </span>
+          
+        </div>
+      </div>
+	  <!-- custom code -->
+	  <div class="md-flex__cell md-flex__cell--shrink">
+        <button id="toggle-sidebar"><i class="material-icons">
+			calendar_view_day
+		</i></button>
+      </div>
+	  <!-- custom code -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../linux/linux-fundamentals/" title="Linux" class="md-tabs__link">
+          Linux
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../oscp/" title="Oscp" class="md-tabs__link">
+          Oscp
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Programming" class="md-tabs__link md-tabs__link--active">
+          Programming
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="ha2332" class="md-nav__button md-logo">
+      
+        <img src="../../assets/images/logo-black-big.png" width="48" height="48">
+      
+    </a>
+    ha2332
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/linux-fundamentals/" title="Linux Fundamentals" class="md-nav__link">
+      Linux Fundamentals
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/linux_cmd/" title="Linux Command Line" class="md-nav__link">
+      Linux Command Line
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Oscp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Oscp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../oscp/" title="OSCP Prep Guide" class="md-nav__link">
+      OSCP Prep Guide
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../oscp/links/" title="OSCP Links" class="md-nav__link">
+      OSCP Links
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../oscp/recon/information-gathering/" title="Information Gathering" class="md-nav__link">
+      Information Gathering
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../../oscp/scanning/network_discovery/" title="Network discovery" class="md-nav__link">
+      Network discovery
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Programming
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+			
+			  
+			  
+			  
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Bash Scripting
+      </label>
+    
+    <a href="./" title="Bash Scripting" class="md-nav__link md-nav__link--active">
+      Bash Scripting
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a_simple_bash_script" title="A Simple Bash Script" class="md-nav__link">
+    A Simple Bash Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if_statement" title="If Statement" class="md-nav__link">
+    If Statement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for_loop" title="For Loop" class="md-nav__link">
+    For Loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamlining_the_results" title="Streamlining The Results" class="md-nav__link">
+    Streamlining The Results
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../c-programming/" title="C Programming" class="md-nav__link">
+      C Programming
+    </a>
+  </li>
+
+			
+        
+			
+			  
+			  
+			  
+
+
+  <li class="md-nav__item">
+    <a href="../python-programming/" title="Python Programming" class="md-nav__link">
+      Python Programming
+    </a>
+  </li>
+
+			
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/metasploit/" title="Metasploit" class="md-nav__link">
+      Metasploit
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a_simple_bash_script" title="A Simple Bash Script" class="md-nav__link">
+    A Simple Bash Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if_statement" title="If Statement" class="md-nav__link">
+    If Statement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for_loop" title="For Loop" class="md-nav__link">
+    For Loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamlining_the_results" title="Streamlining The Results" class="md-nav__link">
+    Streamlining The Results
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav> 
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Bash Scripting</h1>
+                
+                <h3 id="a_simple_bash_script">A Simple Bash Script</h3>
+<ul>
+<li>writing the script</li>
+</ul>
+<p>use a text editor like nano / vim to write the script</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>\#!/bin/bash
+echo &quot;Usage: ./pingscript.sh [network]&quot;
+echo &quot;example: ./pingscript.sh 192.168.20&quot;
+</pre></div>
+</td></tr></table>
+
+<p>First line specifies the terminal to use the Bash interpreter</p>
+<p>After creating the script, use <code class="codehilite">chmod</code> to make it executable</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# chmod 744 pingscript.sh
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>running the script</li>
+<li>check path</li>
+</ul>
+<p>Before running the script, ensure the script folder is in the path</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+</pre></div>
+</td></tr></table>
+
+<p>next run the script</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# ./pingscript.sh
+Usage: ./pingscript.sh [network]
+example: ./pingscript.sh 192.168.20
+</pre></div>
+</td></tr></table>
+
+<h3 id="if_statement">If Statement</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;Usage: ./pingscript.sh [network]&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;example: ./pingscript.sh 192.168.20&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
+
+<p>open the if construct with the <code class="codehilite">if</code> keyword</p>
+<p><code class="codehilite">$1</code> is the first argument</p>
+<p><code class="codehilite">==</code> checks for equality</p>
+<p>if the condition is true, use the <code class="codehilite">then</code> keyword to specify list of actions</p>
+<p>close the if construct with the <code class="codehilite">fi</code> keyword</p>
+<ul>
+<li>output</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~/# ./pingscript.sh
+Usage: ./pingscript.sh [network]
+example: ./pingscript.sh 192.168.20
+</pre></div>
+</td></tr></table>
+
+<h3 id="for_loop">For Loop</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="se">\#</span>!/bin/bash
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;Usage: ./pingscript.sh [network]&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;example: ./pingscript.sh 192.168.20&quot;</span>
+<span class="k">else</span>
+<span class="k">for</span> x in <span class="sb">`</span>seq <span class="m">1</span> <span class="m">254</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+ping -c <span class="m">1</span> <span class="nv">$1</span>.<span class="nv">$x</span>
+<span class="k">done</span> 
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>for loop starts with the <code class="codehilite">for</code> keyword</li>
+<li>range can be specified using the <code class="codehilite">seq</code> keyword</li>
+<li><code class="codehilite">do</code> and <code class="codehilite">done</code> are both used to signify opening and closing of <code class="codehilite">for</code> loop</li>
+<li>
+<p>variables can be referenced by using the dollar <code class="codehilite">$</code> symbol </p>
+</li>
+<li>
+<p>running the script</p>
+</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~/# ./pingscript.sh 192.168.20
+PING 192.168.20.1 (192.168.20.1) 56(84) bytes of data.
+64 bytes from 192.168.20.1: icmp_req=1 ttl=255 time=8.31 ms ❶
+
+--- 192.168.20.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 8.317/8.317/8.317/0.000 ms
+PING 192.168.20.2(192.168.20.2) 56(84) bytes of data.
+64 bytes from 192.168.20.2: icmp_req=1 ttl=128 time=166 ms
+
+--- 192.168.20.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 166.869/166.869/166.869/0.000 ms
+PING 192.168.20.3 (192.168.20.3) 56(84) bytes of data.
+From 192.168.20.13 icmp_seq=1 Destination Host Unreachable ❷
+
+--- 192.168.20.3 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+--snip--
+</pre></div>
+</td></tr></table>
+
+<h3 id="streamlining_the_results">Streamlining The Results</h3>
+<ul>
+<li>using grep to filter results</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;Usage: ./pingscript.sh [network]&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;example: ./pingscript.sh 192.168.20&quot;</span>
+<span class="k">else</span>
+<span class="k">for</span> x in <span class="sb">`</span>seq <span class="m">1</span> <span class="m">254</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+<span class="hll">ping -c <span class="m">1</span> <span class="nv">$1</span>.<span class="nv">$x</span> <span class="p">|</span> grep <span class="s2">&quot;64 bytes&quot;</span>
+</span><span class="k">done</span>
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>output</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~/# ./pingscript.sh 192.168.20
+64 bytes from 192.168.20.1: icmp_req=1 ttl=255 time=4.86 ms
+64 bytes from 192.168.20.2: icmp_req=1 ttl=128 time=68.4 ms
+64 bytes from 192.168.20.8: icmp_req=1 ttl=64 time=43.1 ms
+--_snip_--
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>further refining with the <code class="codehilite">cut</code> command</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="se">\#</span>!/bin/bash
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;Usage: ./pingscript.sh [network]&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;example: ./pingscript.sh 192.168.20&quot;</span>
+<span class="k">else</span>
+<span class="k">for</span> x in <span class="sb">`</span>seq <span class="m">1</span> <span class="m">254</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+<span class="hll">ping -c <span class="m">1</span> <span class="nv">$1</span>.<span class="nv">$x</span> <span class="p">|</span> grep <span class="s2">&quot;64 bytes&quot;</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f4
+</span><span class="k">done</span>
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>output</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~/mydirectory# ./pingscript.sh 192.168.20
+192.168.20.1:
+192.168.20.2:
+192.168.20.8:
+--_snip_--
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>further refining with the <code class="codehilite">sed</code> command</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="se">\#</span>!/bin/bash
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;Usage: ./pingscript.sh [network]&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;example: ./pingscript.sh 192.168.20&quot;</span>
+<span class="k">else</span>
+<span class="k">for</span> x in <span class="sb">`</span>seq <span class="m">1</span> <span class="m">254</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+<span class="hll">ping -c <span class="m">1</span> <span class="nv">$1</span>.<span class="nv">$x</span> <span class="p">|</span> grep <span class="s2">&quot;64 bytes&quot;</span> <span class="p">|</span> cut -d<span class="s2">&quot; &quot;</span> -f4 <span class="p">|</span> sed <span class="s1">&#39;s/.$//&#39;</span>
+</span><span class="k">done</span>
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>output</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~/# ./pingscript.sh 192.168.20
+192.168.20.1
+192.168.20.2
+192.168.20.8
+--_snip_--
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../oscp/scanning/network_discovery/" title="Network discovery" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Network discovery
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../c-programming/" title="C Programming" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                C Programming
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; ha2332-2019
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.48c2c9de.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../assets/javascript/jquery-min.js"></script>
+      
+        <script src="../../assets/javascript/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascript/raphael.min.js"></script>
+      
+        <script src="../../assets/javascript/flowchart.min.js"></script>
+      
+        <script src="../../assets/javascript/jquery-plugin.js"></script>
+      
+        <script src="../../assets/javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
