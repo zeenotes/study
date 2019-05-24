@@ -1,62 +1,51 @@
 /* custom css start */
 
-.md-grid {
-	max-width: 61rem;
-	margin-right: auto;
-	margin-left: auto
-}
-
-.md-content__inner {
-	margin: 0 1rem 1.2rem;
-}
-
 .md-header {
-	height: 2.4rem;
+  height: 2.4rem;
 }
 
 .md-header-nav__title {
-	font-size: .7rem;
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .md-typeset hr {
-	margin: 1em 0;
-	border-bottom: .05rem solid rgba(0, 0, 0, .26)
+  margin: 1em 0;
+  border-bottom: .05rem solid rgba(0, 0, 0, .26)
 }
 
 .md-typeset mark {
-	background-color: rgba(255, 235, 59, .7);
-	margin: 0 .5em;
+  background-color: rgba(255, 235, 59, .7);
+  margin: 0 .5em;
 }
 
 
 .md-typeset table:not([class]) th {
-	min-width: auto;
-	padding: .3rem;
-	background-color: rgba(0, 0, 0, .5);
-	color: #fff;
-	vertical-align: top;
+  min-width: auto;
+  padding: .3rem;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  vertical-align: top;
 }
 
 .md-typeset table:not([class]) td {
-	min-width: auto;
-	padding: .3rem;
-	border-top: .05rem solid rgba(0, 0, 0, .07);
-	vertical-align: top
+  min-width: auto;
+  padding: .3rem;
+  border-top: .05rem solid rgba(0, 0, 0, .07);
+  vertical-align: top
 }
 
 .md-typeset table:not([class]) tr {
-	transition: background-color .125s
+  transition: background-color .125s
 }
 
 .md-typeset table:not([class]) tr:hover {
-	background-color: rgba(0, 0, 0, .1);
-	box-shadow: inset 0 .05rem 0 #fff
+  background-color: rgba(0, 0, 0, .1);
+  box-shadow: inset 0 .05rem 0 #fff
 }
 
 
 .md-typeset h1 {
-	color: inherit;
+  color: inherit;
 }
 
 .md-typeset .emojione {
@@ -71,50 +60,31 @@
 
 
 div.highlight{
-	border: 1px solid #e5e5e5;
+  border: 1px solid #e5e5e5;
 }
 
 #qmg_project_notes{
-	margin-top: 0px;
-	margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 h6.home-list-items{
-	margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 20px;
 }
 
 .list-emoji{
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 hr.horizontal-rule{
-	border: 0;
-	height: 0;
-	border-top: 2px solid rgba(0, 0, 0, 0.1);
-	border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.md-typeset{
-	font-size: 0.7rem;
-}
-
-.md-main__inner {
-	padding-top: .5rem;
+  border: 0;
+  height: 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .md-tabs__link--active{
-	font-weight: bold;
-}
-
-
-.md-content__inner {
-	margin: 0 0.2rem 1.2rem;
-	padding-top: 0.6rem
-}
-
-
-.md-sidebar--secondary {
-	padding-left: 1rem;
+  font-weight: bold;
 }
 
 /* for flowchart js */
@@ -126,34 +96,30 @@ hr.horizontal-rule{
 }
 
 div.md-sidebar.md-sidebar--secondary > div > div {
-	border-left: 3px solid gray;
+  border-left: 3px solid gray;
 }
 
 .md-search-result__item:hover > a:hover {
-	background-color: rgba(0, 0, 0, .1);
-}
-
-div.md-content > article{
-	margin-left: 0px;
+  background-color: rgba(0, 0, 0, .1);
 }
 
 .md-typeset .codehilite code,
 .md-typeset .codehilite pre,
 .md-typeset .highlight code,
 .md-typeset .highlight pre {
-	/* padding: 1rem 1rem 1rem 1rem; */
-	border: 1px solid lightgray;
+  /* padding: 1rem 1rem 1rem 1rem; */
+  border: 1px solid lightgray;
 }
 
 code {
-	border: 1px solid lightgray;
+  border: 1px solid lightgray;
 }
 
 div.index_header {
-	border-bottom: 1px solid #EDEDED;
-	width: 15rem;
-	height: 1.5rem;
-	margin-bottom: 0.5rem;
+  border-bottom: 1px solid #EDEDED;
+  width: 15rem;
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .material-icons {
