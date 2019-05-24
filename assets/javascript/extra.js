@@ -18,12 +18,9 @@ function logKey(e) {
    
   // keyboard shortcut for work
   if (e.key == "L"){
-	location.href = "/others/bookmarks/" ;
+  location.href = "/linux/" ;
   }
-  // keyboard shortcut for work
-  if (e.key == "N"){
-  location.href = "/study/" ;
-  }
+
   // keyboard shortcut for work
   if (e.key == "O"){
   location.href = "/oscp/" ;
@@ -31,16 +28,7 @@ function logKey(e) {
   
   // keyboard shortcut for work
   if (e.key == "P"){
-	location.href = "/personal" ;
-  }
-  // keyboard shortcut for tasks
-  if (e.key == "T"){
-	location.href = "/tasks" ;
-  }
-  
-  // keyboard shortcut for work
-  if (e.key == "W"){
-	location.href = "/work";
+	location.href = "/programming" ;
   }
   
   // keyboard shortcut for search
