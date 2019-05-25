@@ -354,6 +354,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exploring_files" title="Exploring Files" class="md-nav__link">
+    Exploring Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#user_access_control" title="User Access Control" class="md-nav__link">
     User Access Control
   </a>
@@ -665,6 +672,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exploring_files" title="Exploring Files" class="md-nav__link">
+    Exploring Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#user_access_control" title="User Access Control" class="md-nav__link">
     User Access Control
   </a>
@@ -887,6 +901,17 @@ root@kali:/etc#
 </tr>
 </tbody>
 </table>
+<h3 id="exploring_files">Exploring Files</h3>
+<h5>Determining a file's type</h5>
+<blockquote>
+<p>syntax: <code class="codehilite">file _filename_</code></p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# file bookudp.xml
+bookudp.xml: XML 1.0 document, ASCII text, with very long lines
+</pre></div>
+</td></tr></table>
+
 <h3 id="user_access_control">User Access Control</h3>
 <h5>currently logged in user</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -895,29 +920,23 @@ root
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>adding a new user</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# adduser hazeez
+<h5>adding a new user</h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# adduser zeenotes
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>adding a user to the sudoers file</li>
-</ul>
+<h5>adding a user to the sudoers file</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# adduser hazeez sudo
-Adding user &#39;georgia&#39; to group `sudo&#39; ...
-Adding user georgia to group sudo
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# adduser zeenotes sudo
+Adding user &#39;zeenotes&#39; to group `sudo&#39; ...
+Adding user zeenotes to group sudo
 Done.
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>switching users and using sudo</li>
-</ul>
+<h5>switching users and using sudo</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -926,14 +945,14 @@ Done.
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# su hazeez
-hazeez@kali:/root$
-georgia@kali:/root$ sudo adduser john
-[sudo] password for georgia:Adding user `john&#39; ...
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# su zeenotes
+zeenotes@kali:/root$
+zeenotes@kali:/root$ sudo adduser john
+[sudo] password for zeenotes:Adding user `john&#39; ...
 Adding new group `john&#39; (1002) ...
 Adding new user `john&#39; (1002) with group `john&#39; ...
 --snip--
-hazeez@kali:/root$ su
+zeenotes@kali:/root$ su
 Password:root@kali:~#
 </pre></div>
 </td></tr></table>
@@ -982,15 +1001,15 @@ Password:root@kali:~#
 <li>echo the output</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello hazeez
-hello hazeez
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello zeenotes
+hello zeenotes
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>saving text to a file</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello hazeez &gt; myfile
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello zeenotes &gt; myfile
 </pre></div>
 </td></tr></table>
 
@@ -1005,14 +1024,14 @@ hello hazeez
 <li>echo a different line of text to the file</li>
 </ul>
 <p>This will <strong>overwrite</strong> the contents of the file</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello hazeez again &gt; myfile
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello zeenotes again &gt; myfile
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>apppending text to a file</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello hazeez second time &gt;&gt; myfile
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# echo hello zeenotes second time &gt;&gt; myfile
 </pre></div>
 </td></tr></table>
 
@@ -1430,7 +1449,7 @@ listening on [any] 1234 ...
 <p>open a second terminal and use netcat to connect to the netcat listener</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# nc 192.192.168.20.9 1234
-hi hazeez
+hi zeenotes
 </pre></div>
 </td></tr></table>
 
@@ -1439,7 +1458,7 @@ hi hazeez
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>listening on [any] 1234 ...
 connect to [192.168.20.9] from (UNKNOWN) [192.168.20.9] 51917
-hi hazeez
+hi zeenotes
 </pre></div>
 </td></tr></table>
 
