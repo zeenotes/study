@@ -88,7 +88,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#basics" tabindex="1" class="md-skip">
+      <a href="#the_linux_command_line" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -304,6 +304,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Linux Command Line
@@ -316,6 +318,8 @@
       
 <nav class="md-nav md-nav--secondary">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -333,6 +337,19 @@
   <a href="#navigation" title="Navigation" class="md-nav__link">
     Navigation
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file_and_navigation_summary" title="File and Navigation Summary" class="md-nav__link">
+    File and Navigation Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -613,6 +630,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -629,6 +648,19 @@
   <a href="#navigation" title="Navigation" class="md-nav__link">
     Navigation
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file_and_navigation_summary" title="File and Navigation Summary" class="md-nav__link">
+    File and Navigation Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -737,38 +769,49 @@
               
                 
                 
-                  <h1>Linux Command Line</h1>
-                
-                <h2 id="basics">Basics</h2>
+                <h1 id="the_linux_command_line">The Linux Command Line</h1>
+<h2 id="basics">Basics</h2>
 <h3 id="navigation">Navigation</h3>
-<ul>
-<li>View the  of a folder</li>
-</ul>
+<h5>View the files of a folder</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# ls  
 Desktop
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>view all the files including the hidden directories</li>
-</ul>
+<h5>view all the files including the hidden directories</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# ls -a
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>see the current directory</li>
-</ul>
+<h5>listing a directory</h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# ls /usr
+</pre></div>
+</td></tr></table>
+
+<h5>listing a directory with more details</h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# ls -l
+</pre></div>
+</td></tr></table>
+
+<h5>listing a directory and sort the result</h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# ls -lt
+</pre></div>
+</td></tr></table>
+
+<h5>listing a directory and reverse sorting the result</h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# ls -lt --reverse
+</pre></div>
+</td></tr></table>
+
+<h5>see the current directory</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# pwd
 /root
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>changing the directory</li>
-</ul>
+<h5>changing the directory</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~/Desktop# cd ..
@@ -777,17 +820,75 @@ root@kali:/etc#
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>learn more about the command, its options and arguments</li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="codehilite">cd -</code> changes the working directory to the previous working directory</p>
+<p><code class="codehilite">cd ~username</code> - changes the working directory to the home directory of the <em>user_name</em></p>
+</div>
+<h5>help</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# man ls
 </pre></div>
 </td></tr></table>
 
+<h4 id="file_and_navigation_summary">File and Navigation Summary</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Long option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="codehilite">-a</code></td>
+<td>--all</td>
+<td>List all files, even those with names that begin with a period, which are normally not listed (that is, hidden).</td>
+</tr>
+<tr>
+<td><code class="codehilite">-A</code></td>
+<td>--almost-all</td>
+<td>Like the -a option except it does not list . (current directory) and ..(parent directory).</td>
+</tr>
+<tr>
+<td><code class="codehilite">-d</code></td>
+<td>--directory</td>
+<td>Ordinarily, if a directory is specified, ls will list the contents of the directory, not the directory itself. Use this option in conjunction with the -l option to see details about the directory rather than its contents.</td>
+</tr>
+<tr>
+<td><code class="codehilite">-F</code></td>
+<td>--classify</td>
+<td>This option will append an indicator character to the end of each listed name. For example, it will append a forward slash (/) if the name is a directory.</td>
+</tr>
+<tr>
+<td><code class="codehilite">-h</code></td>
+<td>--human-readable</td>
+<td>In long format listings, display file sizes in human-readable format rather than in bytes.</td>
+</tr>
+<tr>
+<td><code class="codehilite">-l</code></td>
+<td></td>
+<td>Display results in long format.</td>
+</tr>
+<tr>
+<td><code class="codehilite">-r</code></td>
+<td>--reverse</td>
+<td>Display the results in reverse order. Normally, ls displays its results in ascending alphabetical order.</td>
+</tr>
+<tr>
+<td><code class="codehilite">-S</code></td>
+<td></td>
+<td>Sort results by file size.</td>
+</tr>
+<tr>
+<td><code class="codehilite">-t</code></td>
+<td></td>
+<td>Sort by modification time.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="user_access_control">User Access Control</h3>
-<ul>
-<li>currently logged in user</li>
-</ul>
+<h5>currently logged in user</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:~# whoami
 root
