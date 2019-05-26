@@ -444,13 +444,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#symbolic_links" title="Symbolic Links" class="md-nav__link">
-    Symbolic Links
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#manipulating_files_and_directories" title="Manipulating Files and Directories" class="md-nav__link">
     Manipulating Files and Directories
   </a>
@@ -693,6 +686,67 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text_expansion" title="Text Expansion" class="md-nav__link">
+    Text Expansion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pathname_expansion" title="Pathname Expansion" class="md-nav__link">
+    Pathname Expansion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pathname_expansion_of_hidden_files" title="Pathname Expansion Of Hidden Files" class="md-nav__link">
+    Pathname Expansion Of Hidden Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilde_expansion" title="Tilde Expansion" class="md-nav__link">
+    Tilde Expansion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic_expansion" title="Arithmetic Expansion" class="md-nav__link">
+    Arithmetic Expansion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic_operators" title="Arithmetic Operators" class="md-nav__link">
+    Arithmetic Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brace_expansion" title="Brace Expansion" class="md-nav__link">
+    Brace Expansion
+  </a>
   
 </li>
         
@@ -1137,13 +1191,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#symbolic_links" title="Symbolic Links" class="md-nav__link">
-    Symbolic Links
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#manipulating_files_and_directories" title="Manipulating Files and Directories" class="md-nav__link">
     Manipulating Files and Directories
   </a>
@@ -1386,6 +1433,67 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text_expansion" title="Text Expansion" class="md-nav__link">
+    Text Expansion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pathname_expansion" title="Pathname Expansion" class="md-nav__link">
+    Pathname Expansion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pathname_expansion_of_hidden_files" title="Pathname Expansion Of Hidden Files" class="md-nav__link">
+    Pathname Expansion Of Hidden Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilde_expansion" title="Tilde Expansion" class="md-nav__link">
+    Tilde Expansion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic_expansion" title="Arithmetic Expansion" class="md-nav__link">
+    Arithmetic Expansion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic_operators" title="Arithmetic Operators" class="md-nav__link">
+    Arithmetic Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brace_expansion" title="Brace Expansion" class="md-nav__link">
+    Brace Expansion
+  </a>
   
 </li>
         
@@ -1730,7 +1838,7 @@ daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 <p class="admonition-title">Copy Paste Using Mouse</p>
 <p>If you are using a mouse, you can double-click a filename to copy it and middle-click to paste it into commands.</p>
 </div>
-<h3 id="symbolic_links">Symbolic Links</h3>
+<h6>Symbolic Links</h6>
 <ul>
 <li>also called as <em>soft link</em> or <em>symlink</em></li>
 </ul>
@@ -2581,6 +2689,174 @@ gzip
 </td></tr></table>
 
 <p>tee captures the entire directory listing to the file ls.txt before grep filters the pipeline’s contents</p>
+<h3 id="text_expansion">Text Expansion</h3>
+<p>Each type a command is typed and pressed <kbd>Enter</kbd> key, <em>bash</em> performs several substitutions on the text before the command is executed. The process is called as <em>expansion</em></p>
+<p><strong>echo</strong> is a shell builtin command that prints text arguments on standard output</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo this is a test
+this is a test
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>any argument passed to <code class="codehilite">echo</code> gets displayed on the screen</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo *
+0 bin boot dev etc home initrd.img initrd.img.old lib lib64 lost+found media mnt opt proc root run sbin srv sys tmp usr var vmlinuz vmlinuz.old
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note<p><code class="codehilite">echo</code> didn't print the star as * is expanded by the shell automatically</p>
+</p>
+</div>
+<h4 id="pathname_expansion">Pathname Expansion</h4>
+<ul>
+<li><em>pathname expansion</em> - the mechanism by which wildcards work</li>
+</ul>
+<p><strong>Examples</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo D*
+Desktop Documents
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo *s
+Documents Pictures Templates Videos
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo [[:upper:]]*
+Desktop Documents Music Pictures Public Templates Videos
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo /usr/*/share
+/usr/local/share
+</pre></div>
+</td></tr></table>
+
+<h4 id="pathname_expansion_of_hidden_files">Pathname Expansion Of Hidden Files</h4>
+<ul>
+<li>show all hidden directories with echo</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo .*
+. .. .cache
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>show only the valid directories with echo</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo .[!.]*
+.cache
+</pre></div>
+</td></tr></table>
+
+<h4 id="tilde_expansion">Tilde Expansion</h4>
+<ul>
+<li>the tilde character (<code class="codehilite">~</code>) has a special meaning</li>
+<li>when used at the beginning of the word, it denotes the home directory</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo ~
+/home/me
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>if the user <code class="codehilite">foo</code> has an account, it expands to </li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo ~foo
+/home/foo
+</pre></div>
+</td></tr></table>
+
+<h4 id="arithmetic_expansion">Arithmetic Expansion</h4>
+<ul>
+<li>Shell allows arithmetic expansion to be performed. Use the shell prompt as a calculator</li>
+</ul>
+<blockquote>
+<p>syntax: <code class="codehilite">$((expression))</code> </p>
+</blockquote>
+<p>where expression is an arithmetic expression consisting of values and arithmetic operators.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo $((2 + 2))
+4
+</pre></div>
+</td></tr></table>
+
+<h5 id="arithmetic_operators">Arithmetic Operators</h5>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Addition</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division (but remember, since expansion supports only integer arithmetic, results are integers)</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Modulo, which simply means “remainder”</td>
+</tr>
+<tr>
+<td>**</td>
+<td>Exponentiation</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note<p>Spaces are not significant in Arithmetic expressions and expressions may be nested</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo $(($((5**2)) * 3))
+75
+</pre></div>
+</td></tr></table>
+
+<p>Single parentheses may be used to group multiple subexpressions.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo $(((5**2) * 3))
+75
+</pre></div>
+</td></tr></table>
+
+<p>Effect of division will always return integers</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo Five divided by two equals $((5/2))
+Five divided by two equals 2
+root@kali:# echo with $((5%2)) left over.
+with 1 left over.
+</pre></div>
+</td></tr></table>
+
+</p>
+</div>
+<h4 id="brace_expansion">Brace Expansion</h4>
 <h3 id="user_access_control">User Access Control</h3>
 <h5 id="currently_logged_in_user">currently logged in user</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
