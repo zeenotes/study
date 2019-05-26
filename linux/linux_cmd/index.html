@@ -684,6 +684,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#read_from_stdin_and_output_to_stdout_and_files" title="Read from Stdin and Output to Stdout and Files" class="md-nav__link">
+    Read from Stdin and Output to Stdout and Files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1366,6 +1373,13 @@
           <li class="md-nav__item">
   <a href="#headtail_-_print_firstlast_part_of_files" title="head/tail - Print First/Last Part of Files" class="md-nav__link">
     head/tail - Print First/Last Part of Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_from_stdin_and_output_to_stdout_and_files" title="Read from Stdin and Output to Stdout and Files" class="md-nav__link">
+    Read from Stdin and Output to Stdout and Files
   </a>
   
 </li>
@@ -2537,6 +2551,36 @@ zsoelim
 </pre></div>
 </td></tr></table>
 
+<ul>
+<li>viewing files in real time using tail</li>
+</ul>
+<p>tail has an option that allows you to view files in real time. This is useful for watching the progress of log files as they are being written. </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# tail -f /var/log/messages
+Feb  8 13:40:05 twin4 dhclient: DHCPACK from 192.168.1.1
+Feb  8 13:40:05 twin4 dhclient: bound to 192.168.1.4 -- renewal in 1652 seconds.
+Feb  8 13:55:32 twin4 mountd[3953]: /var/NFSv4/musicbox exported to both 192.168.1.0/24 and
+</pre></div>
+</td></tr></table>
+
+<p>Using the <code class="codehilite">-f</code> option, tail continues to monitor the file, and when new lines are appended, they immediately appear on the display. This continues until you type <code class="codehilite">CTRL-C</code>.</p>
+<h5 id="read_from_stdin_and_output_to_stdout_and_files">Read from Stdin and Output to Stdout and Files</h5>
+<p>The tee command reads standard input and copies it to both standard output (allowing the data to continue down the pipeline) and to one or more files.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# ls /usr/bin | tee ls.txt | grep zip
+bunzip2
+bzip2
+gunzip
+gzip
+</pre></div>
+</td></tr></table>
+
+<p>tee captures the entire directory listing to the file ls.txt before grep filters the pipeline’s contents</p>
 <h3 id="user_access_control">User Access Control</h3>
 <h5 id="currently_logged_in_user">currently logged in user</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
