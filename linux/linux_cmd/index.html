@@ -958,6 +958,40 @@
     Changing Identities
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sudo_executing_a_command_as_another_user" title="Sudo: Executing a command as another user" class="md-nav__link">
+    Sudo: Executing a command as another user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown_change_file_owner_and_group" title="Chown: Change File Owner and Group" class="md-nav__link">
+    Chown: Change File Owner and Group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chgrp_change_group_ownership" title="chgrp: Change group ownership" class="md-nav__link">
+    chgrp: Change group ownership
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing_the_password" title="Changing the password" class="md-nav__link">
+    Changing the password
+  </a>
+  
 </li>
         
       </ul>
@@ -1913,6 +1947,40 @@
           <li class="md-nav__item">
   <a href="#changing_identities" title="Changing Identities" class="md-nav__link">
     Changing Identities
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sudo_executing_a_command_as_another_user" title="Sudo: Executing a command as another user" class="md-nav__link">
+    Sudo: Executing a command as another user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown_change_file_owner_and_group" title="Chown: Change File Owner and Group" class="md-nav__link">
+    Chown: Change File Owner and Group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chgrp_change_group_ownership" title="chgrp: Change group ownership" class="md-nav__link">
+    chgrp: Change group ownership
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing_the_password" title="Changing the password" class="md-nav__link">
+    Changing the password
   </a>
   
 </li>
@@ -3933,6 +4001,197 @@ root@kali:# ls -l foo.txt
 <blockquote>
 <p>syntax: <code class="codehilite">su -l &lt;user&gt;</code></p>
 </blockquote>
+<ul>
+<li>to start a shell for the superuser</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>zeenotes@kali:$ su -
+password:
+root@kali:# 
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>exiting the logged in user</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# exit
+zeenotes@kali:$
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>commands can be executed using the below syntax</li>
+</ul>
+<blockquote>
+<p>syntax: <code class="codehilite">su -c &lt;command&gt;</code></p>
+</blockquote>
+<h5 id="sudo_executing_a_command_as_another_user">Sudo: Executing a command as another user</h5>
+<ul>
+<li>Admin can configure sudo to allow an ordinary user to execute commands as a different user</li>
+<li>sudo does not require access to superuser's password</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# sudo backup_script
+Password:
+System Backup Starting...
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>To see what privileges are granted by sudo, use the -l option to list them.</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# sudo -l
+User me may run the following commands on this host:
+    (ALL) ALL
+</pre></div>
+</td></tr></table>
+
+<h5 id="chown_change_file_owner_and_group">Chown: Change File Owner and Group</h5>
+<ul>
+<li>change the owner and group owner of a file or directory</li>
+</ul>
+<p>super user privileges are required to use this command</p>
+<blockquote>
+<p>syntax: <code class="codehilite">chown &lt;owner&gt;:&lt;group&gt; file..</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bob</td>
+<td>Changes the ownership of the file from its current owner to user bob.</td>
+</tr>
+<tr>
+<td>bob:users</td>
+<td>Changes the ownership of the file from its current owner to user bob and changes the file group owner to group users.</td>
+</tr>
+<tr>
+<td>:admins</td>
+<td>Changes the group owner to the group admins. The file owner is unchanged.</td>
+</tr>
+<tr>
+<td>bob:</td>
+<td>Changes the file owner from the current owner to user bob and changes the group owner to the login group of user bob.</td>
+</tr>
+</tbody>
+</table>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[janet@linuxbox ~]$ sudo cp myfile.txt ~tony
+Password:
+[janet@linuxbox ~]$ sudo ls -l ~tony/myfile.txt
+ -rw-r--r-- 1 root  root  root 2018-03-20 14:30 /home/tony/myfile.txt
+[janet@linuxbox ~]$ sudo chown tony: ~tony/myfile.txt
+[janet@linuxbox ~]$ sudo ls -l ~tony/myfile.txt
+ -rw-r--r-- 1 tony  tony  tony 2018-03-20 14:30 /home/tony/myfile.txt
+</pre></div>
+</td></tr></table>
+
+<p>we see user janet copy the file from her directory to the home directory of user tony. Next, janet changes the ownership of the file from root (a result of using sudo) to tony.</p>
+<h5 id="chgrp_change_group_ownership">chgrp: Change group ownership</h5>
+<h6>Adding a user to a group</h6>
+<ul>
+<li>view group information</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# groups
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>add a new group</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# groupadd new_group
+root@kali:# 
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>add an exisitng user to a group</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# usermod -a -G new_group user_name
+root@kali:# 
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>change a user's primary group</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# usermod -g groupname username
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>view the groups a user account is assigned to</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# groups
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>view the groups of another user</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# groups &lt;user_name&gt;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>create a user and assign a group in one command</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# useradd -G &lt;group name&gt; &lt;user name&gt;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>add an user to multiple groups</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# usermod -a -G group1,group2,group3 &lt;user name&gt;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>view all groups on the system</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# getent group
+</pre></div>
+</td></tr></table>
+
+<h4 id="changing_the_password">Changing the password</h4>
+<ul>
+<li>changing the password of other users</li>
+</ul>
+<blockquote>
+<p>syntax: <code class="codehilite">passwd &lt;username&gt;</code></p>
+</blockquote>
+<ul>
+<li>changing the password of the current user</li>
+</ul>
+<blockquote>
+<p>syntax: <code class="codehilite">passwd</code></p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# passwd
+(current) UNIX password:
+New UNIX password:
+</pre></div>
+</td></tr></table>
+
 <hr />
 <h3 id="user_access_control">USER ACCESS CONTROL</h3>
 <h5 id="currently_logged_in_user">currently logged in user</h5>
