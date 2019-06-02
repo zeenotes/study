@@ -36,7 +36,7 @@
     
     
       
-        <title>Package Management</title>
+        <title>Archiving & Backup</title>
       
     
 	
@@ -88,7 +88,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#package_management" tabindex="1" class="md-skip">
+      <a href="#zipping_files" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -113,7 +113,7 @@
               ha2332
             </span>
             <span class="md-header-nav__topic">
-              Package Management
+              Archiving & Backup
             </span>
           
         </div>
@@ -186,7 +186,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../archiving-backup/" title="Linux" class="md-tabs__link md-tabs__link--active">
+        <a href="./" title="Linux" class="md-tabs__link md-tabs__link--active">
           Linux
         </a>
       
@@ -283,11 +283,119 @@
 			  
 			  
 
+  
 
-  <li class="md-nav__item">
-    <a href="../archiving-backup/" title="Archiving & Backup" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Archiving & Backup
+      </label>
+    
+    <a href="./" title="Archiving & Backup" class="md-nav__link md-nav__link--active">
       Archiving & Backup
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zipping_files" title="Zipping files" class="md-nav__link">
+    Zipping files
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gzip" title="gzip" class="md-nav__link">
+    gzip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bzip2" title="bzip2" class="md-nav__link">
+    bzip2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archiving_files" title="Archiving Files" class="md-nav__link">
+    Archiving Files
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" title="tar" class="md-nav__link">
+    tar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip" title="zip" class="md-nav__link">
+    zip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncing_files_and_directories" title="Syncing files and directories" class="md-nav__link">
+    Syncing files and directories
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" title="rsync" class="md-nav__link">
+    rsync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using_rsync_over_a_network" title="Using rsync over a network" class="md-nav__link">
+    Using rsync over a network
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
 			
@@ -325,145 +433,11 @@
 			  
 			  
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Package Management
-      </label>
-    
-    <a href="./" title="Package Management" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../package-management/" title="Package Management" class="md-nav__link">
       Package Management
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#packaging_systems" title="Packaging Systems" class="md-nav__link">
-    Packaging Systems
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#high_and_low_level_package_tools" title="High and Low Level Package Tools" class="md-nav__link">
-    High and Low Level Package Tools
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common_package_management_tasks" title="Common Package Management Tasks" class="md-nav__link">
-    Common Package Management Tasks
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#finding_a_package_in_a_repository" title="Finding a Package in a repository" class="md-nav__link">
-    Finding a Package in a repository
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installing_a_package_from_a_repository" title="Installing a Package from a repository" class="md-nav__link">
-    Installing a Package from a repository
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installing_a_package_from_a_package_file" title="Installing a Package from a Package File" class="md-nav__link">
-    Installing a Package from a Package File
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#removing_a_package" title="Removing a Package" class="md-nav__link">
-    Removing a Package
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updating_packages_from_a_repository" title="Updating Packages from a Repository" class="md-nav__link">
-    Updating Packages from a Repository
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upgrading_a_package_from_a_package_file" title="Upgrading a Package from a Package File" class="md-nav__link">
-    Upgrading a Package from a Package File
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listing_installed_packages" title="Listing Installed Packages" class="md-nav__link">
-    Listing Installed Packages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#determining_whether_a_package_is_installed" title="Determining Whether a Package Is Installed" class="md-nav__link">
-    Determining Whether a Package Is Installed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#displaying_information_about_an_installed_packages" title="Displaying Information About an Installed Packages" class="md-nav__link">
-    Displaying Information About an Installed Packages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding_which_package_installed_a_file" title="Finding Which Package Installed a File" class="md-nav__link">
-    Finding Which Package Installed a File
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
 			
@@ -673,23 +647,28 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#packaging_systems" title="Packaging Systems" class="md-nav__link">
-    Packaging Systems
+  <a href="#zipping_files" title="Zipping files" class="md-nav__link">
+    Zipping files
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#high_and_low_level_package_tools" title="High and Low Level Package Tools" class="md-nav__link">
-    High and Low Level Package Tools
+  <a href="#gzip" title="gzip" class="md-nav__link">
+    gzip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bzip2" title="bzip2" class="md-nav__link">
+    bzip2
   </a>
   
 </li>
@@ -700,79 +679,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common_package_management_tasks" title="Common Package Management Tasks" class="md-nav__link">
-    Common Package Management Tasks
+  <a href="#archiving_files" title="Archiving Files" class="md-nav__link">
+    Archiving Files
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#finding_a_package_in_a_repository" title="Finding a Package in a repository" class="md-nav__link">
-    Finding a Package in a repository
+  <a href="#tar" title="tar" class="md-nav__link">
+    tar
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing_a_package_from_a_repository" title="Installing a Package from a repository" class="md-nav__link">
-    Installing a Package from a repository
+  <a href="#zip" title="zip" class="md-nav__link">
+    zip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncing_files_and_directories" title="Syncing files and directories" class="md-nav__link">
+    Syncing files and directories
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" title="rsync" class="md-nav__link">
+    rsync
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing_a_package_from_a_package_file" title="Installing a Package from a Package File" class="md-nav__link">
-    Installing a Package from a Package File
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#removing_a_package" title="Removing a Package" class="md-nav__link">
-    Removing a Package
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updating_packages_from_a_repository" title="Updating Packages from a Repository" class="md-nav__link">
-    Updating Packages from a Repository
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upgrading_a_package_from_a_package_file" title="Upgrading a Package from a Package File" class="md-nav__link">
-    Upgrading a Package from a Package File
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listing_installed_packages" title="Listing Installed Packages" class="md-nav__link">
-    Listing Installed Packages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#determining_whether_a_package_is_installed" title="Determining Whether a Package Is Installed" class="md-nav__link">
-    Determining Whether a Package Is Installed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#displaying_information_about_an_installed_packages" title="Displaying Information About an Installed Packages" class="md-nav__link">
-    Displaying Information About an Installed Packages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding_which_package_installed_a_file" title="Finding Which Package Installed a File" class="md-nav__link">
-    Finding Which Package Installed a File
+  <a href="#using_rsync_over_a_network" title="Using rsync over a network" class="md-nav__link">
+    Using rsync over a network
   </a>
   
 </li>
@@ -799,303 +749,326 @@
               
                 
                 
-                <h1 id="package_management">Package Management</h1>
-<h2 id="packaging_systems">Packaging Systems</h2>
-<p>Two types of packaging systems predominantly</p>
-<table>
-<thead>
-<tr>
-<th>Packaging system</th>
-<th>Distributions (partial listing)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian-style (.deb)</td>
-<td>Debian, Ubuntu, Linux Mint, Raspbian</td>
-</tr>
-<tr>
-<td>Red Hat–style (.rpm)</td>
-<td>Fedora, CentOS, Red Hat Enterprise Linux, OpenSUSE</td>
-</tr>
-</tbody>
-</table>
-<h3 id="high_and_low_level_package_tools">High and Low Level Package Tools</h3>
-<p>Package management systems usually consist of two types of tools.</p>
+                  <h1>Archiving & Backup</h1>
+                
+                <h2 id="zipping_files">Zipping files</h2>
+<h3 id="gzip">gzip</h3>
+<p>The <code class="codehilite">gzip</code> program is used to compress one or more files. When executed, it replaces the original file with a compressed version of the original. The corresponding <code class="codehilite">gunzip</code> program is used to restore compressed files to their original, uncompressed form.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~)
+(!1358)-(192.168.1.21)-(06:51:06)$ ls -l &gt; foo.txt
+
+(root-kali-rolling)-(jobs:0)-(~)
+(!1359)-(192.168.1.21)-(06:51:13)$ ls -l foo.txt 
+-rw-r--r-- 1 root root 1304 Jun  2 06:51 foo.txt
+
+(root-kali-rolling)-(jobs:0)-(~)
+(!1360)-(192.168.1.21)-(06:51:18)$ gzip foo.txt 
+
+(root-kali-rolling)-(jobs:0)-(~)
+(!1361)-(192.168.1.21)-(06:51:24)$ ls -l foo.txt.gz 
+-rw-r--r-- 1 root root 387 Jun  2 06:51 foo.txt.gz
+</pre></div>
+</td></tr></table>
+
 <ul>
-<li>Low-level tools that handle tasks such as installing and removing package files</li>
-<li>High-level tools that perform metadata searching and dependency resolution</li>
+<li>gzip options</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>Distributions</th>
-<th>Low-level tools</th>
-<th>High-level tools</th>
+<th>Option</th>
+<th>Long option</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Debian-style</td>
-<td>dpkg</td>
-<td>apt-get, apt, aptitude</td>
+<td>-c</td>
+<td>--stdout</td>
+<td>Write output to standard output and keep the original files.</td>
 </tr>
 <tr>
-<td>Fedora, Red Hat Enterprise Linux, CentOS</td>
-<td>rpm</td>
-<td>yum, dnf</td>
+<td>-d</td>
+<td>--decompress</td>
+<td>Decompress. This causes gzip to act like gunzip.</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>--force</td>
+<td>Force compression even if a compressed version of the original file already exists.</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>--help</td>
+<td>Display usage information.</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>--list</td>
+<td>List compression statistics for each file compressed.</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>--recursive</td>
+<td>If one or more arguments on the command line is a directory, recursively compress files contained within them.</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>--test</td>
+<td>Test the integrity of a compressed file.</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>--verbose</td>
+<td>Display verbose messages while compressing.</td>
+</tr>
+<tr>
+<td>-number</td>
+<td></td>
+<td>Set amount of compression. number is an integer in the range of 1 (fastest, least compression) to 9 (slowest, most compression). The values 1 and 9 may also be expressed as --fast and --best, respectively. The default value is 6.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="common_package_management_tasks">Common Package Management Tasks</h2>
-<h3 id="finding_a_package_in_a_repository">Finding a Package in a repository</h3>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>apt-get update</td>
-</tr>
-<tr>
-<td>Debian</td>
-<td>apt-cache search search_string</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>yum search search_string</td>
-</tr>
-</tbody>
-</table>
-<p>For example, to search a yum repository for the emacs text editor, we can use this command</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# apt-cache search emacs
+<ul>
+<li>check the integrity</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~)
+(!1362)-(192.168.1.21)-(06:51:32)$ gzip -tv foo.txt.gz 
+foo.txt.gz:  OK
 </pre></div>
 </td></tr></table>
 
-<h3 id="installing_a_package_from_a_repository">Installing a Package from a repository</h3>
-<p>High-level tools permit a package to be downloaded from a repository and installed with full dependency resolution</p>
+<ul>
+<li>view the contents fo the zip file</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~)
+(!1364)-(192.168.1.21)-(07:00:39)$ gunzip -c foo.txt.gz
+total 184
+-rw-r--r-- 1 root root   925 Feb 16 04:46 bookmap.gnmap
+-rw-r--r-- 1 root root  1071 Feb 16 04:46 bookmap.nmap
+-rw-r--r-- 1 root root  8587 Feb 16 04:46 bookmap.xml
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>create a compressed version of a dir listing</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~)
+(!1365)-(192.168.1.21)-(07:00:54)$ ls -l /etc | gzip &gt; foo.txt.gz
+
+(root-kali-rolling)-(jobs:0)-(~)
+(!1366)-(192.168.1.21)-(07:02:02)$ gunzip -c foo.txt.gz
+total 1752
+-rw-r--r-- 1 root     root       2981 Nov  9  2017 adduser.conf
+-rw-r--r-- 1 root     root         44 Jan 19  2018 adjtime
+-rw-r--r-- 1 root     root        185 Nov  9  2017 aliases
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>alternative gunzip tool</li>
+</ul>
+<p>Alternately, there is a program supplied with gzip, called zcat, that is equivalent to gunzip with the -c option. It can be used like the cat command on gzip-compressed files.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~)
+(!1367)-(192.168.1.21)-(07:02:06)$ zcat foo.txt.gz | less
+</pre></div>
+</td></tr></table>
+
+<h3 id="bzip2">bzip2</h3>
+<p>The bzip2 program, by Julian Seward, is similar to gzip but uses a different compression algorithm that achieves higher levels of compression at the cost of compression speed.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~)
+(!1374)-(192.168.1.21)-(07:08:57)$ ls -l /etc &gt; foo.txt
+
+(root-kali-rolling)-(jobs:0)-(~)
+(!1375)-(192.168.1.21)-(07:09:19)$ ls -l foo*
+-rw-r--r-- 1 root root 19662 Jun  2 07:09 foo.txt
+-rw-r--r-- 1 root root  3661 Jun  2 07:02 foo.txt.gz
+
+(root-kali-rolling)-(jobs:0)-(~)
+(!1376)-(192.168.1.21)-(07:09:23)$ bzip2 foo.txt
+
+(root-kali-rolling)-(jobs:0)-(~)
+(!1377)-(192.168.1.21)-(07:09:31)$ ls -l foo*
+-rw-r--r-- 1 root root 3144 Jun  2 07:09 foo.txt.bz2
+-rw-r--r-- 1 root root 3661 Jun  2 07:02 foo.txt.gz
+</pre></div>
+</td></tr></table>
+
+<h2 id="archiving_files">Archiving Files</h2>
+<h3 id="tar">tar</h3>
+<p>shortform for <em>tape archive</em></p>
+<blockquote>
+<p>syntax: <code class="codehilite">tar mode[options] pathname</code></p>
+</blockquote>
+<ul>
+<li>tar modes</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>Style</th>
-<th>Command(s)</th>
+<th>Mode</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Debian</td>
-<td>apt-get update</td>
+<td>c</td>
+<td>Create an archive from a list of files and/or directories.</td>
 </tr>
 <tr>
-<td>Debian</td>
-<td>apt-get install package_name</td>
+<td>x</td>
+<td>Extract an archive.</td>
 </tr>
 <tr>
-<td>Red Hat</td>
-<td>yum install package_name</td>
+<td>r</td>
+<td>Append specified pathnames to the end of an archive.</td>
+</tr>
+<tr>
+<td>t</td>
+<td>List the contents of an archive.</td>
 </tr>
 </tbody>
 </table>
-<p>For example, to install the emacs text editor from an apt repository on a Debian system, we can use this command</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">root</span><span class="p">@</span><span class="k">kali</span><span class="o">:</span><span class="err">#</span> <span class="nt">apt-get</span> <span class="nt">update</span><span class="p">;</span> <span class="nt">apt-get</span> <span class="nt">install</span> <span class="nt">emacs</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# tar cf playground.tar playground
 </pre></div>
 </td></tr></table>
 
-<h3 id="installing_a_package_from_a_package_file">Installing a Package from a Package File</h3>
-<p>If a package file has been downloaded from a source other than a repository, it can be installed directly (though without dependency resolution) using a low-level tool</p>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>dpkg -i package_file</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>rpm -i package_file</td>
-</tr>
-</tbody>
-</table>
-<p>For example, if the <em>emacs-22.1-7.fc7-i386.rpm</em> package file had been downloaded from a non-repository site, it would be installed this way</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rpm -i emacs-22.1-7.fc7-i386.rpm
+<ul>
+<li>listing the contents of the archive</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# tar tf playground.tar
 </pre></div>
 </td></tr></table>
 
-<div class="admonition note">
-<p class="admonition-title">Note<p>Because this technique uses the low-level rpm program to perform the installation, no dependency resolution is performed. If rpm discovers a missing dependency, rpm will exit with an error.</p>
+<ul>
+<li>using tar to transfer files between systems</li>
+</ul>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# mkdir remote-stuff
+root@kali:# cd remote-stuff
+root@kali:# ssh remote-sys &#39;tar cf - Documents&#39; | tar xf -
+</pre></div>
+</td></tr></table>
+Here we were able to copy a directory named Documents from the remote system remote-sys to a directory within the directory named remote-stuff on the local system.</p>
+<h3 id="zip">zip</h3>
+<p>The <code class="codehilite">zip</code> program is both a compression tool and an archiver</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# zip options zipfile file...
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>make a zip archive</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# zip -r playground.zip playground
+</pre></div>
+</td></tr></table>
+
+<p>Unless we include the <code class="codehilite">-r</code> option for recursion, only the playground directory (but none of its contents) is stored</p>
+<ul>
+<li>list and extract files selectively from a zip archive by specifying them to unzip.</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# unzip -l playground.zip playground/dir-001/file-A
+</pre></div>
+</td></tr></table>
+
+<p><code class="codehilite">-l</code> flag is used to list the contents of the archive without extracting the file</p>
+<ul>
+<li>piping a list of filenames to zip using the -@ option</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# find playground -name &quot;file-A&quot; | zip -@ file-A.zip
+</pre></div>
+</td></tr></table>
+
+<h2 id="syncing_files_and_directories">Syncing files and directories</h2>
+<h3 id="rsync">rsync</h3>
+<ul>
+<li>rsync can synchronize both local and remote directories by using the rsync remote-update protocol</li>
+<li>detects differences between two directories and perform the sync</li>
+</ul>
+<blockquote>
+<p>syntax: <code class="codehilite">rsync &lt;options&gt; source destination</code></p>
+</blockquote>
+<ol>
+<li>A local file or directory</li>
+<li>A remote file or directory in the form of <em>[user@]host:path</em></li>
+<li>A remote rsync server specified with a URI of <em>rsync://[user@]host[:port]/path</em></li>
+</ol>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# rsync -av playground foo
+</pre></div>
+</td></tr></table>
+First time when the above command is run, a list of files will be shown. The next time the command is run, nothing will be shown as there is no difference between the source and the destination</p>
+<p>change the directories - e.g. change the source and run the command, only the incremental changes will be synced</p>
+<p>putting a trailing slash at the end will copy only the contents of the directory and not the top level directory</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# rsync -av playground/ foo
+</pre></div>
+</td></tr></table>
+
+<p>The following command will delete the existing files in the destination and start the sync activity</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# rsync -av --delete /etc /home /usr/local /media/BigDisk/backup
+</pre></div>
+</td></tr></table>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip<p>The above command may be aliased and stored in the <em>.bashrc</em> file</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# alias backup=’sudo rsync -av --delete /etc /home /usr/local /media/BigDisk/backup’
+</pre></div>
+</td></tr></table>
+
 </p>
 </div>
-<h3 id="removing_a_package">Removing a Package</h3>
-<p>Packages can be uninstalled using either the high-level or low-level tools.</p>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>apt-get remove package_name</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>yum erase package_name</td>
-</tr>
-</tbody>
-</table>
-<p>For example, to uninstall the emacs package from a Debian-style system, we can use this command</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>apt-get remove emacs
+<h3 id="using_rsync_over_a_network">Using rsync over a network</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# sudo rsync -av --delete --rsh=ssh /etc /home /usr/local remote-sys:/backup
 </pre></div>
 </td></tr></table>
 
-<h3 id="updating_packages_from_a_repository">Updating Packages from a Repository</h3>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>apt-get update; apt-get upgrade</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>yum update</td>
-</tr>
-</tbody>
-</table>
-<p>For example, to apply all available updates to the installed packages on a Debian-style system, we can use this commands</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>apt-get update; apt-get upgrade
-</pre></div>
-</td></tr></table>
-
-<h3 id="upgrading_a_package_from_a_package_file">Upgrading a Package from a Package File</h3>
-<p>If an updated version of a package has been downloaded from a nonrepository source, it can be installed, replacing the previous version</p>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>dpkg -i package_file</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>rpm -U package_file</td>
-</tr>
-</tbody>
-</table>
-<p>For example, to update an existing installation of emacs to the version contained in the package file emacs-22.1-7.fc7-i386.rpm on a Red Hat system, we can use this command</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rpm -U emacs-22.1-7.fc7-i386.rpm
-</pre></div>
-</td></tr></table>
-
-<h3 id="listing_installed_packages">Listing Installed Packages</h3>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>dpkg -l</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>rpm -qa</td>
-</tr>
-</tbody>
-</table>
-<h3 id="determining_whether_a_package_is_installed">Determining Whether a Package Is Installed</h3>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>dpkg -s package_name</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>rpm -q package_name</td>
-</tr>
-</tbody>
-</table>
-<p>For example, to determine whether the emacs package is installed on a Debian-style systems</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dpkg -s emacs
-</pre></div>
-</td></tr></table>
-
-<h3 id="displaying_information_about_an_installed_packages">Displaying Information About an Installed Packages</h3>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>apt-cache show package_name</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>yum info package_name</td>
-</tr>
-</tbody>
-</table>
-<p>For example, to see a description of the emacs package on a Debian-style system</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>apt-cache show emacs
-</pre></div>
-</td></tr></table>
-
-<h3 id="finding_which_package_installed_a_file">Finding Which Package Installed a File</h3>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Command(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>dpkg -S file_name</td>
-</tr>
-<tr>
-<td>Red Hat</td>
-<td>rpm -qf file_name</td>
-</tr>
-</tbody>
-</table>
-<p>see what package installed the /usr/bin/vim file on a Red Hat system,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rpm -qf /usr/bin/vim
+<p><code class="codehilite">-rsh=ssh</code> option instructs rsync to use the ssh program as its remote shell. </p>
+<p>rsync can be used to synchronize files over a network by using an rsync server. rsync can be configured to run as a daemon and listen to incoming requests for synchronization. This is often done to allow mirroring of a remote system. </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# rsync -av –delete rsync://archive.linux.duke.edu/fedora/
+linux/development/rawhide/Everything/x86_64/os/ fedora-devel
 </pre></div>
 </td></tr></table>
                 
@@ -1118,7 +1091,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../linux_cmd/" title="Linux Command Line" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1127,19 +1100,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Linux Command Line
+                Home
               </span>
             </div>
           </a>
         
         
-          <a href="../storage-media/" title="Storage Media" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../linux-fundamentals/" title="Linux Fundamentals" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Storage Media
+                Linux Fundamentals
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
