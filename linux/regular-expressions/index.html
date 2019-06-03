@@ -443,8 +443,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#match_an_element_zero_or_more_times" title="*—Match an Element Zero or More Times" class="md-nav__link">
-    *—Match an Element Zero or More Times
+  <a href="#match_an_element_zero_or_one_time" title="? —Match an Element Zero or One Time" class="md-nav__link">
+    ? —Match an Element Zero or One Time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match_an_element_zero_or_more_times" title="* —Match an Element Zero or More Times" class="md-nav__link">
+    * —Match an Element Zero or More Times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match_an_element_one_or_more_times" title="+ —Match an Element One or More Times" class="md-nav__link">
+    + —Match an Element One or More Times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-match_an_element_a_specific_number_of_times" title="{} -Match an Element a Specific Number of Times" class="md-nav__link">
+    {} -Match an Element a Specific Number of Times
   </a>
   
 </li>
@@ -765,8 +786,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#match_an_element_zero_or_more_times" title="*—Match an Element Zero or More Times" class="md-nav__link">
-    *—Match an Element Zero or More Times
+  <a href="#match_an_element_zero_or_one_time" title="? —Match an Element Zero or One Time" class="md-nav__link">
+    ? —Match an Element Zero or One Time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match_an_element_zero_or_more_times" title="* —Match an Element Zero or More Times" class="md-nav__link">
+    * —Match an Element Zero or More Times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match_an_element_one_or_more_times" title="+ —Match an Element One or More Times" class="md-nav__link">
+    + —Match an Element One or More Times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-match_an_element_a_specific_number_of_times" title="{} -Match an Element a Specific Number of Times" class="md-nav__link">
+    {} -Match an Element a Specific Number of Times
   </a>
   
 </li>
@@ -805,7 +847,14 @@
                 
                   <h1>Regular Expressions</h1>
                 
-                <p>Regular expressions are symbolic notations used to identify patterns in text.</p>
+                <div class="admonition references">
+<p class="admonition-title">References<ul>
+<li><a href="https://www.rexegg.com/regex-quickstart.html">Regex Cheat Sheet</a></li>
+<li><a href="https://regexone.com/">Regex War Game</a></li>
+</ul>
+</p>
+</div>
+<p>Regular expressions are symbolic notations used to identify patterns in text.</p>
 <h2 id="grep">GREP</h2>
 <p>grep means <strong>global regular expression print</strong></p>
 <blockquote>
@@ -1213,6 +1262,7 @@ zip2john
 
 <h4 id="quantifiers">Quantifiers</h4>
 <p>Quantifiers mean <strong>make the preceding element optional</strong></p>
+<h5 id="match_an_element_zero_or_one_time">? —Match an Element Zero or One Time</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1238,7 +1288,101 @@ root@kali:#
 </td></tr></table>
 
 <p>Here we see that the expression matches both forms of the phone number but does not match one containing non-numeric characters. </p>
-<h5 id="match_an_element_zero_or_more_times">*—Match an Element Zero or More Times</h5>
+<h5 id="match_an_element_zero_or_more_times">* —Match an Element Zero or More Times</h5>
+<p>Like the ? metacharacter, the * is used to denote an optional item; however, unlike the ?, the item may occur any number of times, not just once. Let’s say we wanted to see whether a string was a sentence; that is, it starts with an uppercase letter, then contains any number of uppercase and lowercase letters and spaces, and ends with a period. To match this (crude) definition of a sentence, we could use a regular expression like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~/Desktop/grep)
+(!1457)-(192.168.1.21)-(08:24:57)$ echo &quot;This Works&quot; | grep -E &#39;[[:upper:]][[:upper:][:lower:]]*&#39;
+This Works
+
+(root-kali-rolling)-(jobs:0)-(~/Desktop/grep)
+(!1458)-(192.168.1.21)-(08:25:13)$ echo &quot;This Works.&quot; | grep -E &#39;[[:upper:]][[:upper:][:lower:]]*&#39;
+This Works.
+
+(root-kali-rolling)-(jobs:0)-(~/Desktop/grep)
+(!1459)-(192.168.1.21)-(08:25:24)$ echo &quot;this does not.&quot; | grep -E &#39;[[:upper:]][[:upper:][:lower:]]*&#39;
+</pre></div>
+</td></tr></table>
+
+<p>The expression consists of three items: a bracket expression containing the <code class="codehilite">[:upper:]</code> character class, a bracket expression containing both the <code class="codehilite">[:upper:]</code> and <code class="codehilite">[:lower:]</code> character classes and a space, and a period escaped with a backslash. The second element is trailed with an <code class="codehilite">*</code> metacharacter so that after the leading uppercase letter in our sentence, any number of uppercase and lowercase letters and spaces may follow it and still match.</p>
+<h5 id="match_an_element_one_or_more_times">+ —Match an Element One or More Times</h5>
+<p>The <code class="codehilite">+</code> metacharacter works much like the <code class="codehilite">*</code>, except it requires at least one instance of the preceding element to cause a match</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~/Desktop/grep)
+(!1478)-(192.168.1.21)-(08:49:49)$ echo &quot;a b 9&quot; | grep -E &#39;^([a-z]+ ?)+$&#39;
+
+(root-kali-rolling)-(jobs:0)-(~/Desktop/grep)
+(!1479)-(192.168.1.21)-(08:49:52)$ echo &quot;a b c&quot; | grep -E &#39;^([a-z]+ ?)+$&#39;
+a b c
+
+(root-kali-rolling)-(jobs:0)-(~/Desktop/grep)
+(!1480)-(192.168.1.21)-(08:54:10)$ echo &quot;ab  c&quot; | grep -E &#39;^([a-z]+ ?)+$&#39;
+
+(root-kali-rolling)-(jobs:0)-(~/Desktop/grep)
+(!1481)-(192.168.1.21)-(08:54:16)$ 
+</pre></div>
+</td></tr></table>
+
+<p>We see that this expression does not match the line a b 9 because it contains a nonalphabetic character; nor does it match abc  d because more than one space character separates the characters c and d.</p>
+<h5 id="-match_an_element_a_specific_number_of_times">{} -Match an Element a Specific Number of Times</h5>
+<p>The { and } metacharacters are used to express minimum and maximum numbers of required matches. They may be specified in four possible ways, as outlined</p>
+<table>
+<thead>
+<tr>
+<th>Specifier</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{n}</td>
+<td>Match the preceding element if it occurs exactly n times.</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>Match the preceding element if it occurs at least n times but no more than mtimes.</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>Match the preceding element if it occurs n or more times.</td>
+</tr>
+<tr>
+<td>{,m}</td>
+<td>Match the preceding element if it occurs no more than m times.</td>
+</tr>
+</tbody>
+</table>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>root@kali:# echo &quot;(555) 123-4567&quot; | grep -E ’^\(?[0-9]{3}\)? [0-9]{3}-[0-9]{4}$’
+(555) 123-4567
+root@kali:# echo &quot;555 123-4567&quot; | grep -E ’^\(?[0-9]{3}\)? [0-9]{3}-[0-9]{4}$’
+555 123-4567
+root@kali:# echo &quot;5555 123-4567&quot; | grep -E ’^\(?[0-9]{3}\)? [0-9]{3}-[0-9]{4}$’
+[me@linuxbox ~]$
+</pre></div>
+</td></tr></table>
                 
                   
                 
