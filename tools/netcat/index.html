@@ -1784,7 +1784,41 @@ Content-Type: text/html; charset=iso-8859-1
 </td></tr></table>
 
 <h3 id="redirecting_ports_and_traffic">Redirecting Ports and Traffic</h3>
-<p>Netcat can be used to redirect both sides of the traffic. </p>
+<p>Netcat can be used to redirect both sides of the traffic. Useful when obscuring an attack. </p>
+<p><strong>How?</strong></p>
+<p>The idea is to run Netcat thru a middle man so that the attack appears to be coming from the middle man and not the original source. This redirection of traffic is called a <strong>relay</strong>.</p>
+<p><strong>Target Machine - Kali</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(root-kali-rolling)-(jobs:0)-(~)
+(!1559)-(192.168.1.21)-(10:14:04)$ nc -l -p 54321
+test
+hazeez
+</pre></div>
+</td></tr></table>
+
+<p><strong>Middle Man - Windows XP</strong></p>
+<p><code class="codehilite">C:\Documents and Settings\georgia&gt;nc -l -p 12345 | nc 192.168.1.21 54321</code></p>
+<p><strong>Source Machine - Windows 7</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>C:\Windows\system32&gt;nc 192.168.1.26 12345
+test
+hazeez
+</pre></div>
+</td></tr></table>
+
+<p>Input from the source computer (in client mode) is sent to the relay computer (in server mode). The output is piped into a second instance of Netcat (in client mode), which ultimately connects to the target computer. This is a simple case of <strong>port redirection</strong></p>
+<p><strong>Useful for</strong></p>
+<ul>
+<li>hide Netcat traffic on more common ports</li>
+<li>change ports of applications whose normal ports might be blocked by a firewall</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The source computer has no way of receiving any response from the target computer. Solution would be to establish a second relay from the target computer back to the source computer.</p>
+</div>
                 
                   
                 
